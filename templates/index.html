@@ -2,17 +2,18 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>A MERIT Example</title>
+        <title>{% block title %}A MERIT Example{% endblock %}</title>
         <link rel="stylesheet" type="text/css" href="static/style.css">
     </head>
     <body>
         <h1>
             Hello from your MERIT mentors!
         </h1>
+        {% block form %} {% endblock %}
         <div id="user_list">
         {% for user in users %}
             <h2>
-              {{ user.fname }}{{ user.lname }}
+              {{ user.fname }} {{ user.lname }}
             </h2>
             <p>
               <b>City</b>: {{ user.city }}

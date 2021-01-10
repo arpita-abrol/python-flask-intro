@@ -32,3 +32,26 @@ def return_users():
             else:
                 first_line = False
     return render_template("index.html", users=users)
+
+# HTML form
+@app.route('/newUser')
+def new_user():
+    return render_template("new_user.html")
+
+# Write to a CSV file
+@app.route('/submit', methods=["GET", "POST"])
+def submit_form():
+    if request.method == "GET":
+        return redirect(url_for('newUser'))
+    elif request.method == "POST":
+        userdata = dict(request.form)
+        fname = userdata["fname"]
+        lname = userdata["lname"]
+        city = userdata["city"]
+        if( len(fname) < 1 or len(lname) < 1 or len(city) < 1 ):
+            return "Please submit valid data"
+        else:
+            with open('data/users.csv', mode='a', newline='') as file:
+                data = csv.writer(file)
+                data.writerow([fname, lname, city])
+            return "User added!"

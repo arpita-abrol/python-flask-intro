@@ -36,4 +36,3 @@ set FLASK_APP=server.py (Windows)
 $env:FLASK_APP = "server.py" (Windows Powershell)
 flask run
 ```
-
