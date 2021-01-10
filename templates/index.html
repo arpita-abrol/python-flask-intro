@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>A MERIT Example</title>
+        <link rel="stylesheet" type="text/css" href="static/style.css">
+    </head>
+    <body>
+        <h1>
+            Hello from your MERIT mentors!
+        </h1>
+        <div id="user_list">
+        {% for user in users %}
+            <h2>
+              {{ user.fname }}{{ user.lname }}
+            </h2>
+            <p>
+              <b>City</b>: {{ user.city }}
+            </p>
+        {% endfor %}
+        </div>
+    </body>
+</html>
