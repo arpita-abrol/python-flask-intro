@@ -55,3 +55,33 @@ def submit_form():
                 data = csv.writer(file)
                 data.writerow([fname, lname, city])
             return render_template("new_user.html", status='User added!')
+
+# HTML form
+@app.route('/getUser')
+def get_user():
+    return render_template("get_user.html")
+
+@app.route('/getUser', methods=["POST"])
+def return_users_by_city():
+    userdata = dict(request.form)
+    city = userdata["city"]
+    if( len(city) < 1 ):
+        return render_template("get_user.html", status="Invalid City")
+    with open('data/users.csv') as file:
+        data = csv.reader(file, delimiter=',')
+        first_line = True
+        users = []
+        for row in data:
+            if not first_line:
+                if( row[2].strip() == city.strip() ):
+                    users.append({
+                    "fname": row[0],
+                    "lname": row[1]
+                    })
+            else:
+                first_line = False
+    if( len(users) == 0 ):
+        status = "No Users Found for specified city."
+    else:
+        status = "Users found!"
+    return render_template("get_user.html", status=status, users=users)
