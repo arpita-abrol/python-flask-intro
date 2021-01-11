@@ -25,7 +25,7 @@ venv\Scripts\activate (Windows)
 Now, let's install needed libraries to the virtual environment. This only needs to be done when the ```venv``` is first created or when ```requirements.txt``` is updated.
 
 ```
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 
 Finally, it is time to run our project.
