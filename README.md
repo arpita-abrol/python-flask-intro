@@ -34,8 +34,15 @@ Finally, it is time to run our project.
 export FLASK_APP=server.py
 set FLASK_APP=server.py (Windows)
 $env:FLASK_APP = "server.py" (Windows Powershell)
+```
+
+And finally.
+
+```
 flask run
 ```
+
+In the terminal, you'll be able to view a link to your project on localhost.
 
 While developing, it may help to auto-refresh without needing to stop Flask from running. You can do this by enabling development mode
 ```
