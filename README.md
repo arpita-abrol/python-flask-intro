@@ -36,3 +36,9 @@ set FLASK_APP=server.py (Windows)
 $env:FLASK_APP = "server.py" (Windows Powershell)
 flask run
 ```
+
+While developing, it may help to auto-refresh without needing to stop Flask from running. You can do this by enabling development mode
+```
+export FLASK_ENV=development
+set FLASK_ENV=development (Windows)
+```
