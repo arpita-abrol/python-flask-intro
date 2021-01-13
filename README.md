@@ -6,7 +6,7 @@ Python 3, pip
 
 ## Setup
 
-Using the command line, first ```cd``` into the project folder.
+Using the command line, first ```cd``` into the project folder. Please make sure to check that you use the specified commands for your OS.
 
 First, create the virtual environment (```venv```). This only needs to be done the first time you run the project.
 
@@ -28,7 +28,9 @@ Now, let's install needed libraries to the virtual environment. This only needs 
 pip install -r requirements.txt
 ```
 
-Finally, it is time to run our project.
+If you do not have a ```requirements.txt```, you can instead do ```pip install flask```.
+
+Now, it is time to run our project.
 
 ```
 export FLASK_APP=server.py
@@ -44,7 +46,7 @@ flask run
 
 In the terminal, you'll be able to view a link to your project on localhost.
 
-While developing, it may help to auto-refresh without needing to stop Flask from running. You can do this by enabling development mode
+NOTE: While developing, it may help to auto-refresh without needing to stop Flask from running. You can do this by enabling development mode
 ```
 export FLASK_ENV=development
 set FLASK_ENV=development (Windows)
